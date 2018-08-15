@@ -1,0 +1,98 @@
+/*Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*General styles*/
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body header {
+    width: 100%;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    font-size: 1.6rem;
+    background-color: lightblue;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box {
+    width: 30rem;
+    height: 10rem;
+    background-color: darkgray;
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 2px 5px 10px black;
+    text-align: center;
+
+}
+
+.box h1 {
+    font-size: 2.5rem;
+    background-color: blue;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.box p {
+    padding: 1rem;
+}
+
+.box-hover-on {
+    animation: box_hover forwards ease-out .3s;
+}
+
+.box-hover-off {
+    animation: box_hover_off forwards ease-out .3s;
+}
+
+/*Animation*/
+@keyframes box_hover {
+    0% {
+        box-shadow: 2px 5px 10px black;
+        background-color: darkgray;
+        height: 10rem;
+    }
+    100% {
+        box-shadow: 2px 5px 35px black;
+        background-color: red;
+        height: 20rem;
+    }
+}
+
+@keyframes box_hover_off {
+    0% {
+        box-shadow: 2px 5px 35px black;
+        background-color: red;
+        height: 20rem;
+    }
+    100% {
+        box-shadow: 2px 5px 10px black;
+        background-color: darkgray;
+        height: 10rem;
+    }
+}
