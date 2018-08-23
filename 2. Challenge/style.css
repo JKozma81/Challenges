@@ -30,6 +30,10 @@ header h1 {
     font-size: 2.5rem;
 }
 
+main {
+    margin-bottom: 2rem;
+}
+
 .product-container {
     width: 50%;
     margin: 0 auto;
@@ -67,13 +71,13 @@ header h1 {
 }
 
 .modal {
-    visibility: hidden;
+    display: none;
     width: 100%;
     height: 100%;
-    background-color: #000;
-    opacity: .7;
+    background-color: rgba(0, 0, 0, .8);
     z-index: 2;
-    position: absolute;
+    position: fixed;
+    overflow: auto;
     left: 0;
     top: 0;
     color: #ccc;
@@ -84,19 +88,46 @@ header h1 {
     margin: 1rem;
     font-size: 2rem;
     font-weight: bold;
-    position: absolute;
-    right: 3rem;
-    top: 0;
+    float: right;
+}
+
+.modal span::after {
+    content: '';
+    clear: both;
+}
+
+.modal span:hover {
+    cursor: pointer;
+    color: #fff;
 }
 
 .modal img {
-    z-index: 3;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    animation: grow .3s linear forwards;
+}
+
+.product-realname {
+    color: #fff;
+    font-size: 1.8rem;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
+@keyframes grow {
+    0% {
+        transform: translate(-50%, -50%) scale(0,0);
+    }
 
+    100% {
+        transform: translate(-50%, -50%) scale(1,1);
+    }
+
+}
 
